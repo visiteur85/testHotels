@@ -1,0 +1,37 @@
+@import "src/styles/variables";
+
+
+.loginPage {
+  background: url("../../assets/pictures/IMG_20210312_140957_174 1.png") no-repeat center center;
+  background-size: cover;
+
+  .wrapper {
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loginPage__loginForm {
+      width: 409px;
+      background-color: $white;
+      border-radius: 16px;
+      padding: 32px;
+
+      h1 {
+        margin-bottom: 32px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28.13px;
+        text-align: center;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+
+
+
+
