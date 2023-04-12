@@ -5,9 +5,13 @@ import {LoginFormType} from "../../../types/LoginFormType";
 import s from "./auorizationForm.module.scss"
 import {Button} from "../../Button/UniversalButton";
 import {saveLoginToStorage} from "../../../util/loginForLocalStorage";
+import {useNavigate} from "react-router-dom";
+import {PATH} from "../../../util/path";
 
 
 export const AutorizationForm = () => {
+    const navigate = useNavigate()
+
 
     const {
         register,
@@ -16,6 +20,7 @@ export const AutorizationForm = () => {
     } = useForm<LoginFormType>({mode: 'onBlur'});
     const onSubmit: SubmitHandler<LoginFormType> = (data) => {
         saveLoginToStorage(data)
+        navigate(PATH.MAIN_PAGE)
     };
     return (
         <div className={s.form}>

@@ -1,0 +1,33 @@
+.mainPage {
+  padding-top: 32px;
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .hotels {
+    display: grid;
+    grid-template-areas:
+ "find favorites favorites "
+ " result favorites favorites "
+ " result favorites favorites ";
+    gap: 24px;
+
+    .find {
+      grid-area: find;
+      border: 1px solid red;
+    }
+
+    .favorites {
+      grid-area: favorites;
+      border: 1px solid red;
+    }
+
+    .result {
+      grid-area: result;
+      border: 1px solid red;
+    }
+  }
+}
