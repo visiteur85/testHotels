@@ -4,6 +4,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {LoginFormType} from "../../../types/LoginFormType";
 import s from "./auorizationForm.module.scss"
 import {Button} from "../../Button/UniversalButton";
+import {saveLoginToStorage} from "../../../util/loginForLocalStorage";
 
 
 export const AutorizationForm = () => {
@@ -14,8 +15,7 @@ export const AutorizationForm = () => {
         handleSubmit,
     } = useForm<LoginFormType>({mode: 'onBlur'});
     const onSubmit: SubmitHandler<LoginFormType> = (data) => {
-        console.log(data)
-        localStorage.setItem('login', JSON.stringify(data));
+        saveLoginToStorage(data)
     };
     return (
         <div className={s.form}>
