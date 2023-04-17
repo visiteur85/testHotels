@@ -49,7 +49,7 @@ export const FindHotelForm = () => {
                         <AuthInput
                             register={register}
                             error={errors.endDate}
-                            name='number'
+                            name='endDate'
                             required='Введите количество дней'
                             inputName="Количество дней"
                             defaultValue="1"
