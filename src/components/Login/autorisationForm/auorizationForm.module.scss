@@ -1,25 +1,31 @@
 @import "src/styles/variables";
 
 .form {
+  .formWrapper {
+    width: 345px;
+    .emailInput {
+      margin-bottom: 24px;
+    }
+
+    .passwordInput {
+      margin-bottom: 32px;
+    }
+
+    button {
+      width: 100%;
+      height: 50px;
+      background-image: linear-gradient(104.34deg, $primary -15.34%, $secondary 145.95%);
+      color: #FFFFFF;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
   display: flex;
   justify-content: center;
 
-  .emailInput {
-    margin-bottom: 24px;
-  }
 
-  .passwordInput {
-    margin-bottom: 32px;
-  }
 
-  button {
-    width: 100%;
-    height: 50px;
-    background-image: linear-gradient(104.34deg, $primary -15.34%, $secondary 145.95%);
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 16px;
-  }
+
 }
 
 

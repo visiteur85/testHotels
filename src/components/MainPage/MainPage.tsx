@@ -4,9 +4,8 @@ import {getLoginFromStorage} from "../../util/loginForLocalStorage";
 import {PATH} from "../../util/path";
 import {Footer} from "../footer/Footer";
 import style from './mainPage.module.scss'
-import {FindHotel} from "../FindHotel/FindHotel";
-import {Result} from "../Result/Result";
-import {FavoritsHotels} from "../FavoritesHotel/FavoritsHotels";
+import {FindHotelForm} from "../FindHotel/FindHotelForm";
+
 
 export const MainPage = () => {
     const login = getLoginFromStorage()
@@ -20,19 +19,17 @@ export const MainPage = () => {
             <div className={style.footer}>
                 <Footer/>
             </div>
-            <div className={style.hotels}>
-                <div className={style.find}>
-                    <FindHotel/>
+            <div className={style.subMainPage}>
+                <div className={style.findAndFavorites}>
+                    <div className={style.findHotel}>
+                        <FindHotelForm/>
+                    </div>
+                    <div className={style.favoritesHotel}></div>
                 </div>
-                <div className={style.favorites}>
-                    <FavoritsHotels/>
-                </div>
-                <div className={style.result}>
-                <Result/>
-                </div>
+
+                <div className={style.hotels}></div>
+
             </div>
-
-
         </div>
     );
 };

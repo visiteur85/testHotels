@@ -8,6 +8,8 @@ type AuthTextFieldType = {
     name: string;
     required: string;
     inputName: string
+    defaultValue?:string
+
 };
 
 export const AuthInput = ({
@@ -15,9 +17,10 @@ export const AuthInput = ({
                               error,
                               name,
                               required,
-                              inputName
+                              inputName,
+    defaultValue,
                           }: AuthTextFieldType) => {
-    const isPassword = () => (name === 'password' ? 8 : 2);
+    const isPassword = () => (name === 'password' ? 8 : 1);
     const emailValidation = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
     const validation = {
@@ -41,7 +44,7 @@ export const AuthInput = ({
         <>
             <span className={s.inputName}>{inputName}</span>
             <div className={s.inputStyle}>
-                <input className={s.input} type={name} {...validation} />
+                <input className={s.input} type={name} {...validation} defaultValue={defaultValue} />
                 <div className={s.errorStyle}>
                     {error && (
                         <span className={s.error}>{error.message || 'Error'}</span>

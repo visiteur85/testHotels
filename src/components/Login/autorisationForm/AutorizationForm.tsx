@@ -24,29 +24,32 @@ export const AutorizationForm = () => {
     };
     return (
         <div className={s.form}>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <div className={s.emailInput}>
-                    <AuthInput
-                        register={register}
-                        error={errors.email}
-                        name='email'
-                        required='Введите email'
-                        inputName="Email"
-                    />
-                </div>
-                <div className={s.passwordInput}>
-                    <AuthInput
-                        register={register}
-                        error={errors.password}
-                        name='password'
-                        required='Введите пароль'
-                        inputName="Пароль"
-                    />
-                </div>
-                <Button type='submit' isValid={isValid}>
-                    Войти
-                </Button>
-            </form>
+            <div className={s.formWrapper}>
+
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className={s.emailInput}>
+                        <AuthInput
+                            register={register}
+                            error={errors.email}
+                            name='email'
+                            required='Введите email'
+                            inputName="Email"
+                        />
+                    </div>
+                    <div className={s.passwordInput}>
+                        <AuthInput
+                            register={register}
+                            error={errors.password}
+                            name='password'
+                            required='Введите пароль'
+                            inputName="Пароль"
+                        />
+                    </div>
+                    <Button type='submit' isValid={isValid}>
+                        Войти
+                    </Button>
+                </form>
+            </div>
         </div>
     );
 };
