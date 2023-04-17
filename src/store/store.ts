@@ -1,9 +1,11 @@
 import createSagaMiddleware from '@redux-saga/core';
 import {AnyAction, combineReducers, configureStore, ThunkDispatch} from "@reduxjs/toolkit";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import {findHotelReducer} from "./findHotel-reducer";
 
 const sagaMiddleware = createSagaMiddleware();
 const reducers = {
+    find: findHotelReducer,
 
 };
 

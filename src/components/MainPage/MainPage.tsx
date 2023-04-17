@@ -24,7 +24,9 @@ export const MainPage = () => {
                     <div className={style.findHotel}>
                         <FindHotelForm/>
                     </div>
-                    <div className={style.favoritesHotel}></div>
+                    <div className={style.favoritesHotel}>
+                        12341324
+                    </div>
                 </div>
 
                 <div className={style.hotels}></div>
