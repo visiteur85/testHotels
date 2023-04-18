@@ -1,5 +1,6 @@
 import {createSlice,} from "@reduxjs/toolkit";
 import dayjs from "dayjs";
+import {FindFormType} from "../../types/FindFormType";
 
 export const slice = createSlice({
     name: 'findHotel',
@@ -8,7 +9,7 @@ export const slice = createSlice({
             city: "Москва",
             date: dayjs().format('YYYY-MM-DD'),
             endDate: dayjs().add(1, 'day').format('YYYY-MM-DD'),
-        }
+        } as FindFormType
 
     },
     reducers: {

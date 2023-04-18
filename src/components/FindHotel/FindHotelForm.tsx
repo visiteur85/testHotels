@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 import {AuthInput} from "../authInput/authInput";
 import {FindFormType} from "../../types/FindFormType";
 import {Button} from "../Button/UniversalButton";
 import s from './findHotelForm.module.scss'
 import dayjs from "dayjs";
-import {useAppSelector} from "../../store/store";
+import {useAppDispatch, useAppSelector} from "../../store/store";
 import {selectHotels} from "../../store/selectors";
+import {getHotels} from "../../store/sagas/getHotelsSaga";
 
 
 export const FindHotelForm = () => {
-    const hotels = useAppSelector(selectHotels);
-    console.log(hotels)
+    const dispatch = useAppDispatch()
+    const filteredHotels = useAppSelector(selectHotels);
+
+
+
     const today = dayjs().format('YYYY-MM-DD');
     const {
         register,
@@ -19,7 +23,18 @@ export const FindHotelForm = () => {
         handleSubmit,
     } = useForm<FindFormType>({mode: 'onBlur'});
     const onSubmit: SubmitHandler<FindFormType> = (data) => {
+        const filters = {
+            city: data.city,
+            date: data.date,
+            endDate: dayjs(data.date).add(+data.endDate, 'day').format('YYYY-MM-DD')
+        }
+        dispatch(getHotels(filters))
+
     };
+
+    useEffect(()=>{
+        dispatch(getHotels(filteredHotels))
+    },[])
 
     return (
         <div>

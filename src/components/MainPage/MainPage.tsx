@@ -5,9 +5,12 @@ import {PATH} from "../../util/path";
 import {Footer} from "../footer/Footer";
 import style from './mainPage.module.scss'
 import {FindHotelForm} from "../FindHotel/FindHotelForm";
+import {useAppSelector} from "../../store/store";
 
 
 export const MainPage = () => {
+    const hotels = useAppSelector(state => state.getHotels.hotels)
+    console.log('main-page', hotels)
     const login = getLoginFromStorage()
 
     if (!login) {
@@ -25,11 +28,13 @@ export const MainPage = () => {
                         <FindHotelForm/>
                     </div>
                     <div className={style.favoritesHotel}>
-                        12341324
+
                     </div>
                 </div>
 
-                <div className={style.hotels}></div>
+                <div className={style.hotels}>
+                    {hotels.map(el=>el.hotelName)}
+                </div>
 
             </div>
         </div>
