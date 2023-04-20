@@ -10,7 +10,6 @@ import {useAppSelector} from "../../store/store";
 
 export const MainPage = () => {
     const hotels = useAppSelector(state => state.getHotels.hotels)
-    console.log('main-page', hotels)
     const login = getLoginFromStorage()
 
     if (!login) {

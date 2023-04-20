@@ -5,3 +5,4 @@ export type HotelsType = {
     stars:number
 
 }
+export type HotelsWithFavoriteType = HotelsType & {isFavorite:boolean}

@@ -1,23 +1,19 @@
 import {createSlice, PayloadAction,} from "@reduxjs/toolkit";
 import dayjs from "dayjs";
-import {HotelsType} from "../../types/hotelsType";
+import {HotelsType, HotelsWithFavoriteType} from "../../types/hotelsType";
 
 export const slice = createSlice({
     name: 'getHotel',
     initialState: {
-        hotels: [] as HotelsType[]
+        hotels: [] as HotelsWithFavoriteType[]
 
 
     },
     reducers: {
 
-        getHotelsAC(state, action: PayloadAction<HotelsType[]>) {
+        getHotelsAC(state, action: PayloadAction<HotelsWithFavoriteType[]>) {
             state.hotels = action.payload
-            console.log('state',state.hotels)
         }
-        // addTopic(state, action: PayloadAction<TopicType>) {
-        //     state.topic = action.payload;
-        // },
     },
 
 });

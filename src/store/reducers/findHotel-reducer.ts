@@ -1,6 +1,7 @@
-import {createSlice,} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction,} from "@reduxjs/toolkit";
 import dayjs from "dayjs";
 import {FindFormType} from "../../types/FindFormType";
+import {converterTime} from "../../util/converterTime";
 
 export const slice = createSlice({
     name: 'findHotel',
@@ -8,17 +9,17 @@ export const slice = createSlice({
         findHotel: {
             city: "Москва",
             date: dayjs().format('YYYY-MM-DD'),
-            endDate: dayjs().add(1, 'day').format('YYYY-MM-DD'),
+            endDate: converterTime(1)
         } as FindFormType
 
     },
     reducers: {
-        // addTopic(state, action: PayloadAction<TopicType>) {
-        //     state.topic = action.payload;
-        // },
+        saveFoundHotels(state, action: PayloadAction<FindFormType>) {
+            state.findHotel = action.payload
+        },
     },
 
 });
 
 export const findHotelReducer = slice.reducer;
-export const {  } = slice.actions;
+export const {saveFoundHotels  } = slice.actions;

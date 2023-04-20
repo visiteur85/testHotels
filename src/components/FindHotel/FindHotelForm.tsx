@@ -8,6 +8,8 @@ import dayjs from "dayjs";
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {selectHotels} from "../../store/selectors";
 import {getHotels} from "../../store/sagas/getHotelsSaga";
+import {saveFoundHotels} from "../../store/reducers/findHotel-reducer";
+import {converterTime} from "../../util/converterTime";
 
 
 export const FindHotelForm = () => {
@@ -26,8 +28,10 @@ export const FindHotelForm = () => {
         const filters = {
             city: data.city,
             date: data.date,
-            endDate: dayjs(data.date).add(+data.endDate, 'day').format('YYYY-MM-DD')
+            endDate: converterTime(+data.endDate)
+
         }
+        dispatch(saveFoundHotels(filters))
         dispatch(getHotels(filters))
 
     };
