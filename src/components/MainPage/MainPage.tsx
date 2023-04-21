@@ -2,7 +2,7 @@ import React from 'react';
 import {Navigate} from "react-router-dom";
 import {getLoginFromStorage} from "../../util/loginForLocalStorage";
 import {PATH} from "../../util/path";
-import {Footer} from "../footer/Footer";
+import {Header} from "../header/Header";
 import style from './mainPage.module.scss'
 import {FindHotelForm} from "../FindHotel/FindHotelForm";
 import {useAppSelector} from "../../store/store";
@@ -20,7 +20,7 @@ export const MainPage = () => {
     return (
         <div className={style.mainPage}>
             <div className={style.footer}>
-                <Footer/>
+                <Header/>
             </div>
             <div className={style.subMainPage}>
                 <div className={style.findAndFavorites}>

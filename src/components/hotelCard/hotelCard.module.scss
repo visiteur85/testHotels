@@ -1,0 +1,43 @@
+@import "src/styles/variables";
+@import "src/styles/mixin";
+
+
+.hotelCard {
+  padding-top: 19px;
+  padding-right: 34px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $grey;
+  display: flex;
+  justify-content: space-between;
+
+  .hotelInfo {
+    display: flex;
+
+    .rait {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+
+      .fill * {
+        fill: $Yellow;
+      }
+    }
+
+
+    .house {
+      width: 64px;
+      height: 64px;
+      padding: 13.01px 15px 16px 14px;
+      background-color: $darkGrey;
+      align-items: center;
+      border-radius: 100%;
+      margin-right: 24px;
+
+    }
+  }
+
+}
+
+
+
+

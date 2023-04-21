@@ -23,6 +23,7 @@ export const Carousel = () => {
     };
 
     return (
+
         <Slider {...settings}>
             <div>
                 <img src={image1} alt='slide-1' />
@@ -38,6 +39,7 @@ export const Carousel = () => {
             </div>
 
         </Slider>
+
     );
 };
 

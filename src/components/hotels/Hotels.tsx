@@ -1,15 +1,17 @@
 import React from 'react';
 import style from './hotels.module.scss'
-import {selectHotels} from "../../store/selectors";
+import {allHotelsfromServer, selectHotels} from "../../store/selectors";
 import {useAppSelector} from "../../store/store";
 import dayjs from "dayjs";
 import 'dayjs/locale/ru';
 import vector from '../../assets/svg/Vector.svg'
 import {Carousel} from "../Slider/Slider";
+import {HotelCard} from "../hotelCard/HotelCard";
 
 
 export const Hotels = () => {
     const findedHotels = useAppSelector(selectHotels);
+    const allHotels = useAppSelector(allHotelsfromServer)
     const localizedFormat = require('dayjs/plugin/localizedFormat');
     dayjs.extend(localizedFormat);
     const formattedDate = dayjs(findedHotels.date).locale('ru').format('DD MMMM YYYY');
@@ -30,9 +32,10 @@ export const Hotels = () => {
                 <Carousel/>
             </div>
             <p className={style.nameOfList}>Добавлено в избранное: <span>3</span> отеля</p>
-            <div>asdfasdf</div>
-
-
+            <div className={style.allHotelsBlock}>
+                {allHotels.map((m) => <HotelCard name={m.hotelName} key={m.hotelId} hotelId={m.hotelId}
+                raiting={m.stars}/>)}
+            </div>
         </div>
     );
 };
