@@ -6,6 +6,7 @@ import {Footer} from "../footer/Footer";
 import style from './mainPage.module.scss'
 import {FindHotelForm} from "../FindHotel/FindHotelForm";
 import {useAppSelector} from "../../store/store";
+import {Hotels} from "../hotels/Hotels";
 
 
 export const MainPage = () => {
@@ -32,7 +33,7 @@ export const MainPage = () => {
                 </div>
 
                 <div className={style.hotels}>
-                    {hotels.map(el=>el.hotelName)}
+                   <Hotels/>
                 </div>
 
             </div>

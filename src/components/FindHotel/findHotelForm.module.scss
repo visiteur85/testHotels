@@ -1,12 +1,21 @@
-.formWrapper {
-  width: 296px;
-  .cityInput {
-    margin-bottom: 16px;
-  }
-  .dateInput {
-    margin-bottom: 20px;
-  }
-  .dateEnd {
-    margin-bottom: 32px;
+@import "src/styles/variables";
+@import "src/styles/mixin";
+
+.findHotel{
+
+  .formWrapper {
+    width: 296px;
+
+
+    .cityInput {
+      margin-bottom: 16px;
+    }
+    .dateInput {
+      margin-bottom: 20px;
+    }
+    .dateEnd {
+      margin-bottom: 32px;
+    }
   }
 }
+

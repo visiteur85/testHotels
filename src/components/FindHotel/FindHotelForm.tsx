@@ -41,7 +41,7 @@ export const FindHotelForm = () => {
     },[])
 
     return (
-        <div>
+        <div className={s.findHotel}>
             <div className={s.formWrapper}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className={s.cityInput}>

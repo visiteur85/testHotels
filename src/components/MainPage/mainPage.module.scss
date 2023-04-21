@@ -1,5 +1,9 @@
+@import "src/styles/variables";
+@import "src/styles/mixin";
+
 .mainPage {
   padding-top: 32px;
+  background-color: $darkGrey;
 
   .footer {
     display: flex;
@@ -15,25 +19,35 @@
     margin-left: auto;
     margin-right: auto;
 
+
     .findAndFavorites {
-      border: 1px solid yellow;
       width: 360px;
+
 
       .findHotel {
         height: 410px;
         margin-bottom: 24px;
         padding: 32px;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        background-color: $white;
       }
 
       .favoritesHotel {
         height: 472px;
         border: 1px solid blue;
+        background-color: $white;
+        border-radius: 16px;
       }
     }
 
     .hotels {
       border: 1px solid green;
       width: 664px;
+      background-color: $white;
+      border-radius: 16px;
+      padding: 48px 32px  52px 32px;
+      height: 902px;
     }
   }
 

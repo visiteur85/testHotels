@@ -1,0 +1,53 @@
+@import "src/styles/variables";
+@import "src/styles/mixin";
+
+.allHotels {
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+
+    .nameofHeading {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 37.5px;
+      color: $black;
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    img {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .nameofCity {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 37.5px;
+      color: $black;
+      display: inline-block;
+
+    }
+
+  }
+
+  .carousel {
+    margin-bottom: 28px;
+  }
+
+  .nameOfList {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 22px;
+    color: $black;
+
+    span {
+      font-weight: 500;
+      color: $darkGreen;
+    }
+  }
+}
+
