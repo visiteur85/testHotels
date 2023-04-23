@@ -12,6 +12,7 @@ import {HotelCard} from "../hotelCard/HotelCard";
 export const Hotels = () => {
     const findedHotels = useAppSelector(selectHotels);
     const allHotels = useAppSelector(allHotelsfromServer)
+    const price = useAppSelector(allHotelsfromServer)
     const localizedFormat = require('dayjs/plugin/localizedFormat');
     dayjs.extend(localizedFormat);
     const formattedDate = dayjs(findedHotels.date).locale('ru').format('DD MMMM YYYY');
@@ -33,8 +34,15 @@ export const Hotels = () => {
             </div>
             <p className={style.nameOfList}>Добавлено в избранное: <span>3</span> отеля</p>
             <div className={style.allHotelsBlock}>
-                {allHotels.map((m) => <HotelCard name={m.hotelName} key={m.hotelId} hotelId={m.hotelId}
-                raiting={m.stars}/>)}
+                {allHotels.map((m) =>
+                {return   (
+                    <HotelCard name={m.hotelName} key={m.hotelId} hotelId={m.hotelId}
+                                                 raiting={m.stars}
+                                                 price={m.priceAvg}
+                                                    favorite={m.isFavorite}
+
+
+                />)})}
             </div>
         </div>
     );

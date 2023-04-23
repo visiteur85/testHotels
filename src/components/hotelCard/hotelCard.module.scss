@@ -4,23 +4,36 @@
 
 .hotelCard {
   padding-top: 19px;
-  padding-right: 34px;
+  //padding-right: 34px;
   padding-bottom: 16px;
   border-bottom: 1px solid $grey;
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+
+
+
+
 
   .hotelInfo {
     display: flex;
+   width: 100%;
+    overflow:hidden;
 
-    .rait {
-      display: flex;
-      align-items: center;
-      gap: 3px;
+    .nameHotel {
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 22px;
+      color: $black;
+      overflow:hidden;
 
-      .fill * {
-        fill: $Yellow;
-      }
+
+    }
+
+    .formattedDate {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: $greyFont;
+      margin-bottom: 5px;
     }
 
 
@@ -34,9 +47,70 @@
       margin-right: 24px;
 
     }
+
+    .infoAboutHotel {
+     width: 100%;
+
+      .nameAndFavorite {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-right: 32px;
+        .fill * {
+          fill: #E55858;
+        }
+      }
+
+      .priceAndStars {
+        display: flex;
+        width: 100%;
+
+        .rait {
+          display: flex;
+          align-items: center;
+          gap: 3px;
+          margin-right: 271px;
+
+          .fill * {
+            fill: $Yellow;
+          }
+        }
+
+        p {
+          margin-right: 8px;
+          font-weight: 300;
+          font-size: 11px;
+          line-height: 22px;
+          color: $greyFont;
+          white-space: nowrap;
+
+          .nameOfPrice {
+            margin-right:8px;
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 22px;
+            color: $greyFont;
+            //align-self: end;
+            vertical-align: top;
+          }
+
+          .price {
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 22px;
+            color: $black;
+            //white-space: nowrap;
+
+          }
+        }
+      }
+    }
   }
 
 }
+
+
+
 
 
 

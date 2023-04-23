@@ -6,14 +6,19 @@ import {allHotelsfromServer, selectHotels} from "../../store/selectors";
 import 'dayjs/locale/ru';
 import {countOfDays} from "../../util/countOfDays";
 import {ReactComponent as Star} from "../../assets/svg/star.svg";
+import {ReactComponent as Heart} from "../../assets/svg/heart.svg";
+
 
 type HotelCardPropsType = {
     name: string
     hotelId: number
     raiting: number
+    price: number
+    favorite:boolean
+
 }
 
-export const HotelCard = ({name, raiting}: HotelCardPropsType) => {
+export const HotelCard = ({name, raiting, price, favorite, hotelId }: HotelCardPropsType) => {
     const findedHotels = useAppSelector(selectHotels);
 
     const dayjs = require('dayjs');
@@ -24,6 +29,9 @@ export const HotelCard = ({name, raiting}: HotelCardPropsType) => {
     const startDate = dayjs(findedHotels.date);
     const endDate = dayjs(findedHotels.endDate);
     const diff = endDate.diff(startDate, 'day');
+    const onFavoriteClick = ()=> {
+
+    }
 
 
     return (
@@ -32,20 +40,27 @@ export const HotelCard = ({name, raiting}: HotelCardPropsType) => {
                 <div className={style.house}>
                     <img src={houseIcon} alt=""/>
                 </div>
-                <div>
-                    <div>{name}</div>
-                    <div>{formattedDate} - {diff} {countOfDays(diff)}</div>
-                    <div className={style.rait}>
-                        {Array.from({length: 5}, (_, index) =>
-                            <Star key={index} className={index + 1 <= raiting ? style.fill : ""}
-                            />)}
+                <div className={style.infoAboutHotel}>
+                    <div className={style.nameAndFavorite}>
+                        <div className={style.nameHotel}>{name}</div>
+                        <Heart className={favorite ? style.fill: ""} />
                     </div>
+                    <div className={style.formattedDate}>{formattedDate} - {diff} {countOfDays(diff)}</div>
+                    <div className={style.priceAndStars}>
+                        <div className={style.rait}>
+                            {Array.from({length: 5}, (_, index) =>
+                                <Star key={index} className={index + 1 <= raiting ? style.fill : ""}
+                                />)}
+                        </div>
+
+                        <p><span className={style.nameOfPrice}>Цена:</span><span
+                            className={style.price}>{Math.trunc(price)} ₽ </span></p>
 
 
+                    </div>
                 </div>
-
             </div>
-            <div className={style.hotelInfo}>asdfasdff</div>
+
         </div>
     );
 };
