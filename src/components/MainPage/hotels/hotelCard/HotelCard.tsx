@@ -1,12 +1,12 @@
 import React from 'react';
 import style from './hotelCard.module.scss'
-import houseIcon from '../../assets/pictures/house.png'
-import {useAppSelector} from "../../store/store";
-import {allHotelsfromServer, selectHotels} from "../../store/selectors";
+import houseIcon from '../../../../assets/pictures/house.png'
+import {useAppSelector} from "../../../../store/store";
+import {allHotelsfromServer, selectHotels} from "../../../../store/selectors";
 import 'dayjs/locale/ru';
-import {countOfDays} from "../../util/countOfDays";
-import {ReactComponent as Star} from "../../assets/svg/star.svg";
-import {ReactComponent as Heart} from "../../assets/svg/heart.svg";
+import {countOfDays} from "../../../../util/countOfDays";
+import {ReactComponent as Star} from "../../../../assets/svg/star.svg";
+import {ReactComponent as Heart} from "../../../../assets/svg/heart.svg";
 
 
 type HotelCardPropsType = {

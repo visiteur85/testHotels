@@ -1,5 +1,5 @@
 import {ButtonHTMLAttributes} from "react";
-import style from './auorizationForm.module.scss'
+import style from './UniversalButton.module.scss'
 
 
 type ButtonType = {

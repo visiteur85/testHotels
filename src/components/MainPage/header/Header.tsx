@@ -1,9 +1,9 @@
 import React from 'react';
-import logOut from "../../assets/svg/log out.svg"
+import logOut from "../../../assets/svg/log out.svg"
 import style from './header.module.scss'
 import {useNavigate} from "react-router-dom";
-import {PATH} from "../../util/path";
-import {removeFromStorage} from "../../util/local-storage";
+import {PATH} from "../../../util/path";
+import {removeFromStorage} from "../../../util/local-storage";
 
 export const Header = () => {
     const navigate = useNavigate()

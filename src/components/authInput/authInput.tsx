@@ -1,7 +1,7 @@
 import React from 'react';
 import {FieldError} from "react-hook-form";
 import s from './authInput.module.scss'
-import style from "../Button/auorizationForm.module.scss";
+
 
 type AuthTextFieldType = {
     register: any;

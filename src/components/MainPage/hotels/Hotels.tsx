@@ -1,12 +1,12 @@
 import React from 'react';
 import style from './hotels.module.scss'
-import {allHotelsfromServer, selectHotels} from "../../store/selectors";
-import {useAppSelector} from "../../store/store";
+import {allHotelsfromServer, selectHotels} from "../../../store/selectors";
+import {useAppSelector} from "../../../store/store";
 import dayjs from "dayjs";
 import 'dayjs/locale/ru';
-import vector from '../../assets/svg/Vector.svg'
-import {Carousel} from "../Slider/Slider";
-import {HotelCard} from "../hotelCard/HotelCard";
+import vector from '../../../assets/svg/Vector.svg'
+import {Carousel} from "./Slider/Slider";
+import {HotelCard} from "./hotelCard/HotelCard";
 
 
 export const Hotels = () => {

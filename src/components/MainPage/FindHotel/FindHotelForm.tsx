@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
-import {AuthInput} from "../authInput/authInput";
-import {FindFormType} from "../../types/FindFormType";
-import {Button} from "../Button/UniversalButton";
+import {AuthInput} from "../../authInput/authInput";
+import {FindFormType} from "../../../types/FindFormType";
+import {Button} from "../../Button/UniversalButton";
 import s from './findHotelForm.module.scss'
 import dayjs from "dayjs";
-import {useAppDispatch, useAppSelector} from "../../store/store";
-import {selectHotels} from "../../store/selectors";
-import {getHotels} from "../../store/sagas/getHotelsSaga";
-import {saveFoundHotels} from "../../store/reducers/findHotel-reducer";
-import {converterTime} from "../../util/converterTime";
+import {useAppDispatch, useAppSelector} from "../../../store/store";
+import {selectHotels} from "../../../store/selectors";
+import {getHotels} from "../../../store/sagas/getHotelsSaga";
+import {saveFoundHotels} from "../../../store/reducers/findHotel-reducer";
+import {converterTime} from "../../../util/converterTime";
 
 
 export const FindHotelForm = () => {

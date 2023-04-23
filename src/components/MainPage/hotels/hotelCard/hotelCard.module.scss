@@ -1,13 +1,12 @@
-@import "src/styles/variables";
-@import "src/styles/mixin";
+@import "../../../../styles/variables";
+@import "../../../../styles/mixin";
 
 
 .hotelCard {
   padding-top: 19px;
-  //padding-right: 34px;
   padding-bottom: 16px;
   border-bottom: 1px solid $grey;
-  width: 100%;
+  width: 97%;
 
 
 
@@ -56,6 +55,8 @@
         justify-content: space-between;
         width: 100%;
         padding-right: 32px;
+
+
         .fill * {
           fill: #E55858;
         }
@@ -99,7 +100,6 @@
             font-size: 17px;
             line-height: 22px;
             color: $black;
-            //white-space: nowrap;
 
           }
         }

@@ -2,11 +2,11 @@ import React from 'react';
 import {Navigate} from "react-router-dom";
 import {getLoginFromStorage} from "../../util/loginForLocalStorage";
 import {PATH} from "../../util/path";
-import {Header} from "../header/Header";
+import {Header} from "./header/Header";
 import style from './mainPage.module.scss'
-import {FindHotelForm} from "../FindHotel/FindHotelForm";
+import {FindHotelForm} from "./FindHotel/FindHotelForm";
 import {useAppSelector} from "../../store/store";
-import {Hotels} from "../hotels/Hotels";
+import {Hotels} from "./hotels/Hotels";
 
 
 export const MainPage = () => {
