@@ -7,6 +7,7 @@ import style from './mainPage.module.scss'
 import {FindHotelForm} from "./FindHotel/FindHotelForm";
 import {useAppSelector} from "../../store/store";
 import {Hotels} from "./hotels/Hotels";
+import {FavoritesHotels} from "./FavoritesHotel/FavoritsHotels";
 
 
 export const MainPage = () => {
@@ -28,7 +29,7 @@ export const MainPage = () => {
                         <FindHotelForm/>
                     </div>
                     <div className={style.favoritesHotel}>
-
+                        <FavoritesHotels/>
                     </div>
                 </div>
 

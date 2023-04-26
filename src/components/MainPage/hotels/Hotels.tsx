@@ -7,6 +7,7 @@ import 'dayjs/locale/ru';
 import vector from '../../../assets/svg/Vector.svg'
 import {Carousel} from "./Slider/Slider";
 import {HotelCard} from "./hotelCard/HotelCard";
+import houseIcon from "../../../assets/pictures/house.png";
 
 
 export const Hotels = () => {
@@ -34,17 +35,24 @@ export const Hotels = () => {
             </div>
             <p className={style.nameOfList}>Добавлено в избранное: <span>3</span> отеля</p>
             <div className={style.allHotelsBlock}>
-                {allHotels.map((m) =>
-                {return   (
-                    <HotelCard name={m.hotelName} key={m.hotelId} hotelId={m.hotelId}
-                                                 raiting={m.stars}
-                                                 price={m.priceAvg}
-                                                    favorite={m.isFavorite}
+                {allHotels.map((m) => {
+                    return (
+                        <div className={style.hotelInfo}>
+                            <div className={style.house}>
+                                <img src={houseIcon} alt=""/>
+                            </div>
+                            <HotelCard name={m.hotelName} key={m.hotelId} hotelId={m.hotelId}
+                                       rating={m.stars}
+                                       price={m.priceAvg}
+                                       favorite={m.isFavorite}
 
 
-                />)})}
+                            />
+                        </div>)
+                })}
             </div>
         </div>
     );
-};
+}
+    ;
 

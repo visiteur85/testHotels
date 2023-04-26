@@ -10,13 +10,20 @@ export const slice = createSlice({
 
     },
     reducers: {
-
         getHotelsAC(state, action: PayloadAction<HotelsWithFavoriteType[]>) {
             state.hotels = action.payload
+        },
+        changeFavorite(state, action: PayloadAction<number>) {
+            state.hotels = state.hotels.map((hotel) => {
+                if (hotel.hotelId === action.payload) {
+                    return {...hotel, isFavorite: !hotel.isFavorite}
+                }
+                return hotel
+            })
         }
     },
 
 });
 
 export const getHotelReducer = slice.reducer;
-export const {getHotelsAC} = slice.actions;
+export const {getHotelsAC, changeFavorite} = slice.actions;

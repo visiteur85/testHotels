@@ -1,24 +1,25 @@
 import React from 'react';
 import style from './hotelCard.module.scss'
-import houseIcon from '../../../../assets/pictures/house.png'
-import {useAppSelector} from "../../../../store/store";
-import {allHotelsfromServer, selectHotels} from "../../../../store/selectors";
+import {useAppDispatch, useAppSelector} from "../../../../store/store";
+import {selectHotels} from "../../../../store/selectors";
 import 'dayjs/locale/ru';
 import {countOfDays} from "../../../../util/countOfDays";
 import {ReactComponent as Star} from "../../../../assets/svg/star.svg";
 import {ReactComponent as Heart} from "../../../../assets/svg/heart.svg";
+import {changeFavorite} from "../../../../store/reducers/getHotel-reducer";
 
 
 type HotelCardPropsType = {
     name: string
     hotelId: number
-    raiting: number
+    rating: number
     price: number
-    favorite:boolean
+    favorite: boolean
 
 }
 
-export const HotelCard = ({name, raiting, price, favorite, hotelId }: HotelCardPropsType) => {
+export const HotelCard = ({name, rating, price, favorite, hotelId}: HotelCardPropsType) => {
+    const dispatch = useAppDispatch()
     const findedHotels = useAppSelector(selectHotels);
 
     const dayjs = require('dayjs');
@@ -29,32 +30,32 @@ export const HotelCard = ({name, raiting, price, favorite, hotelId }: HotelCardP
     const startDate = dayjs(findedHotels.date);
     const endDate = dayjs(findedHotels.endDate);
     const diff = endDate.diff(startDate, 'day');
-    const onFavoriteClick = ()=> {
-
+    const onFavoriteClick = () => {
+        dispatch(changeFavorite(hotelId))
     }
 
 
     return (
         <div className={style.hotelCard}>
             <div className={style.hotelInfo}>
-                <div className={style.house}>
-                    <img src={houseIcon} alt=""/>
-                </div>
+
                 <div className={style.infoAboutHotel}>
                     <div className={style.nameAndFavorite}>
                         <div className={style.nameHotel}>{name}</div>
-                        <Heart className={favorite ? style.fill: ""} />
+                        <div>
+                            <Heart onClick={onFavoriteClick} className={favorite ? style.fill : ""}/>
+                        </div>
                     </div>
                     <div className={style.formattedDate}>{formattedDate} - {diff} {countOfDays(diff)}</div>
                     <div className={style.priceAndStars}>
                         <div className={style.rait}>
                             {Array.from({length: 5}, (_, index) =>
-                                <Star key={index} className={index + 1 <= raiting ? style.fill : ""}
+                                <Star key={index} className={index + 1 <= rating ? style.fill : ""}
                                 />)}
                         </div>
 
                         <p><span className={style.nameOfPrice}>Цена:</span><span
-                            className={style.price}>{Math.trunc(price)} ₽ </span></p>
+                            className={style.price}>{Math.trunc(price)} ₽</span></p>
 
 
                     </div>

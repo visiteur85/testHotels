@@ -29,17 +29,33 @@
       line-height: 37.5px;
       color: $black;
       display: inline-block;
-
     }
 
-
-
   }
+
   .allHotelsBlock {
     overflow: auto;
     max-height: 529px;
     max-width: 100%;
 
+    .hotelInfo {
+      padding-top: 19px;
+      padding-right: 16px;
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+
+      .house {
+        width: 64px;
+        height: 64px;
+        padding: 13.01px 15px 16px 14px;
+        background-color: $darkGrey;
+        align-items: center;
+        border-radius: 100%;
+        margin-right: 24px;
+
+      }
+    }
   }
 
   .carousel {
@@ -59,4 +75,6 @@
     }
   }
 }
+
+
 
