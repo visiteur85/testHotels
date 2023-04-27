@@ -28,7 +28,7 @@ export const FindHotelForm = () => {
         const filters = {
             city: data.city,
             date: data.date,
-            endDate: converterTime(+data.endDate)
+            endDate: converterTime(+data.endDate, data.date)
 
         }
         dispatch(saveFoundHotels(filters))

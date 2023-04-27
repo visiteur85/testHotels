@@ -14,33 +14,13 @@
 
   .buttons {
     display: flex;
-    color: #99A0A3;
-    font-weight: 400;
-    font-size: 14px;
-
-
-    .rateButton {
-      width: 89px;
-      border: 1px solid #99A0A3;
-      border-radius: 4px;
-      padding-top: 4px;
-      padding-bottom: 4px;
-      padding-left: 8px;
-      margin-right: 8px;
-      &:active {
-        border: 2px solid red;
-      }
-    }
-
-    .priceButton {
-
-      width: 89px;
-      border: 1px solid #99A0A3;
-      border-radius: 4px;
-      padding-top: 4px;
-      padding-bottom: 4px;
-      padding-left: 8px;
-
-    }
+    margin-bottom: 32px;
   }
+  .text {
+    text-align: center;
+  }
+
+.hotelsCards {
+  overflow: auto;
+}
 }

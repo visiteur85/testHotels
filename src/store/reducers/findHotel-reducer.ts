@@ -9,12 +9,14 @@ export const slice = createSlice({
         findHotel: {
             city: "Москва",
             date: dayjs().format('YYYY-MM-DD'),
-            endDate: converterTime(1)
+            endDate: converterTime(1, dayjs().format('YYYY-MM-DD') )
         } as FindFormType
 
     },
     reducers: {
+
         saveFoundHotels(state, action: PayloadAction<FindFormType>) {
+
             state.findHotel = action.payload
         },
     },

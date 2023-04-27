@@ -5,11 +5,13 @@ import {findHotelReducer} from "./reducers/findHotel-reducer";
 import {getHotelReducer} from "./reducers/getHotel-reducer";
 import { takeEvery } from '@redux-saga/core/effects';
 import {getHotelsSaga} from "./sagas/getHotelsSaga";
+import {favoriteHotelsReducer} from "./reducers/favoriteHotels-reducer";
 
 const sagaMiddleware = createSagaMiddleware();
 const reducers = {
     find: findHotelReducer,
-    getHotels:getHotelReducer
+    getHotels:getHotelReducer,
+    favoriteHotels: favoriteHotelsReducer
 
 };
 

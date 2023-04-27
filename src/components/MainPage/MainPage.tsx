@@ -34,7 +34,7 @@ export const MainPage = () => {
                 </div>
 
                 <div className={style.hotels}>
-                   <Hotels/>
+                   <Hotels />
                 </div>
 
             </div>
