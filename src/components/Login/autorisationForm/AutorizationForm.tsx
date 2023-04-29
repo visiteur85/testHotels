@@ -33,7 +33,9 @@ export const AutorizationForm = () => {
                             error={errors.email}
                             name='email'
                             required='Введите email'
-                            inputName="Email"
+                            inputName="Логин"
+                            placeholder="Введите email"
+
                         />
                     </div>
                     <div className={s.passwordInput}>
@@ -43,6 +45,7 @@ export const AutorizationForm = () => {
                             name='password'
                             required='Введите пароль'
                             inputName="Пароль"
+                            placeholder="Введите пароль"
                         />
                     </div>
                     <Button type='submit' isValid={isValid}>

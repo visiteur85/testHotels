@@ -1,11 +1,12 @@
 import {FindFormType} from "../../types/FindFormType";
 import {call, put} from '@redux-saga/core/effects';
 import {hotelsApi} from "../../api/hotelsApi";
-import {AxiosError, AxiosResponse} from 'axios';
+import {AxiosResponse} from 'axios';
 import {PayloadAction} from "@reduxjs/toolkit";
 import {HotelsType, HotelsWithFavoriteType} from "../../types/hotelsType";
 import {getHotelsAC} from "../reducers/getHotel-reducer";
 import {isLoadingAc} from "../reducers/app-reducer";
+import {toast} from "react-toastify";
 
 
 export function* getHotelsSaga(action: PayloadAction<FindFormType>) {
@@ -20,6 +21,10 @@ export function* getHotelsSaga(action: PayloadAction<FindFormType>) {
 
         yield put(getHotelsAC(hotelsWithFavorite))
     } catch (e) {
+        toast.error("Ошибка сервера")
+        toast.error("Ошибка сервера")
+        toast.error("Ошибка сервера")
+        yield put(isLoadingAc(false))
 
     }
 

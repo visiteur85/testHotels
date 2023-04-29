@@ -10,12 +10,14 @@ type AuthTextFieldType = {
     required: string;
     inputName: string
     defaultValue?: string
+    placeholder?:string
 
 
 };
 
 export const AuthInput = ({
                               register,
+                              placeholder,
                               error,
                               name,
                               required,
@@ -48,7 +50,7 @@ export const AuthInput = ({
             <span className={`${!error ? s.inputName : s.inputNameError}`}>{inputName}</span>
             <div className={s.inputStyle}>
                 <input className={`${!error ? s.input : s.inputError}`} type={name} {...validation}
-                       defaultValue={defaultValue}/>
+                       defaultValue={defaultValue} placeholder={ placeholder}/>
                 <div className={s.errorStyle}>
                     {error && (
                         <span className={s.error}>{error.message || 'Error'}</span>

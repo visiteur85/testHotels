@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import style from './hotelCard.module.scss'
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import 'dayjs/locale/ru';
-import {countOfDays} from "../../util/countOfDays";
+import {getCountWord} from "../../util/countOfDays";
 import {ReactComponent as Star} from "../../assets/svg/star.svg";
 import {ReactComponent as Heart} from "../../assets/svg/heart.svg";
 import {setFavoriteFalse, setFavoriteTrue} from "../../store/reducers/getHotel-reducer";
@@ -72,7 +72,7 @@ export const HotelCard = ({name, rating, price, favorite, hotelId, formattedDate
                                 <Heart onClick={onFavoriteClick} className={favorite ? style.fill : ""}/>
                             </div>
                         </div>
-                        <div className={style.formattedDate}>{formattedDate} - {diffDate} {countOfDays(diffDate)}</div>
+                        <div className={style.formattedDate}>{formattedDate} - {diffDate} {getCountWord(diffDate, 'days')}</div>
                         <div className={style.priceAndStars}>
                             <div className={` ${style.rait} ${favoriteClass ? style.check : style.ddd}`}>
                                 {Array.from({length: 5}, (_, index) =>

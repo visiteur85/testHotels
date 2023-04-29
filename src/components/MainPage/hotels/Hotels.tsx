@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './hotels.module.scss'
-import {allHotelsfromServer, selectHotels} from "../../../store/selectors";
+import {allHotelsfromServer, favoriteHotelsSelector, selectHotels} from "../../../store/selectors";
 import {useAppSelector} from "../../../store/store";
 import dayjs from "dayjs";
 import 'dayjs/locale/ru';
@@ -8,11 +8,13 @@ import vector from '../../../assets/svg/Vector.svg'
 import {Carousel} from "./Slider/Slider";
 import {HotelCard} from "../../hotelCard/HotelCard";
 import houseIcon from "../../../assets/pictures/house.png";
+import {getCountWord} from "../../../util/countOfDays";
 
 
 export const Hotels = () => {
         const foundHotels = useAppSelector(selectHotels);
         const allHotels = useAppSelector(allHotelsfromServer)
+    const countOfFavorite = useAppSelector(favoriteHotelsSelector).length
         const localizedFormat = require('dayjs/plugin/localizedFormat');
         dayjs.extend(localizedFormat);
 
@@ -40,7 +42,8 @@ export const Hotels = () => {
                 <div className={style.carousel}>
                     <Carousel/>
                 </div>
-                <p className={style.nameOfList}>Добавлено в избранное: <span>3</span> отеля</p>
+                <p className={style.nameOfList}>Добавлено в избранное: <span>{countOfFavorite}   </span>
+                    {getCountWord(countOfFavorite, 'hotels')}</p>
                 <div className={style.allHotelsBlock}>
                     {allHotels.map((m) => {
                         return (
