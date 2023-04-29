@@ -22,8 +22,6 @@ export function* getHotelsSaga(action: PayloadAction<FindFormType>) {
         yield put(getHotelsAC(hotelsWithFavorite))
     } catch (e) {
         toast.error("Ошибка сервера")
-        toast.error("Ошибка сервера")
-        toast.error("Ошибка сервера")
         yield put(isLoadingAc(false))
 
     }
