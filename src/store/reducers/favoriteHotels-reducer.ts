@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction,} from "@reduxjs/toolkit";
-import dayjs from "dayjs";
-import {FavoriteHotel, HotelsType, HotelsWithFavoriteType, RemovingHotelType} from "../../types/hotelsType";
+
+import {FavoriteHotel, RemovingHotelType} from "../../types/hotelsType";
 
 export const slice = createSlice({
     name: 'favoriteHotels',
@@ -19,7 +19,10 @@ export const slice = createSlice({
                 return (
                     hotel.hotelId !== action.payload.hotelId ||
                     hotel.date !== action.payload.date ||
-                    hotel.period !== action.payload.period)
+                    hotel.period !== action.payload.period ||
+                    hotel.priceAvg !== action.payload.price
+                )
+
             })
 
         }

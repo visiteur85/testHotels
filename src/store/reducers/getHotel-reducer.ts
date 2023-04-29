@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction,} from "@reduxjs/toolkit";
-import dayjs from "dayjs";
-import {HotelsType, HotelsWithFavoriteType} from "../../types/hotelsType";
+
+import {HotelsWithFavoriteType} from "../../types/hotelsType";
 
 export const slice = createSlice({
     name: 'getHotel',
@@ -27,9 +27,9 @@ export const slice = createSlice({
                 return hotel
             })
         },
-        setFavoriteFalse(state, action: PayloadAction<number>) {
+        setFavoriteFalse(state, action: PayloadAction<{hotelId:number, price:number}>) {
             state.hotels = state.hotels.map((hotel) => {
-                if (hotel.hotelId === action.payload) {
+                if (hotel.hotelId === action.payload.hotelId && hotel.priceAvg === action.payload.price  ) {
                     return {...hotel, isFavorite: false}
                 }
                 return hotel

@@ -55,8 +55,8 @@ export const HotelCard = ({name, rating, price, favorite, hotelId, formattedDate
                 }))
                 dispatch(setFavoriteTrue(hotelId))
             } else {
-                dispatch(removeHotel({hotelId: hotelId, date: formattedDate, period: diffDate}))
-                dispatch(setFavoriteFalse(hotelId))
+                dispatch(removeHotel({hotelId: hotelId, date: formattedDate, period: diffDate, price:price }))
+                dispatch(setFavoriteFalse({hotelId, price}))
 
             }
         }

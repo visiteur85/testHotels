@@ -14,6 +14,7 @@ export type RemovingHotelType = {
     hotelId: number
     date: string
     period: number
+    price:number
 
 
 }

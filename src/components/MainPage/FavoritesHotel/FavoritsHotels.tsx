@@ -55,7 +55,7 @@ export const FavoritesHotels = () => {
                 <div className={style.hotelsCards}>
                     {sortedFavorites().map((hotel) => {
                         return (
-                            <div className={style.hotelInfo} key={hotel.hotelId}>
+                            <div className={style.hotelInfo} key={hotel.hotelId + '' + hotel.date}>
                                 <HotelCard name={hotel.hotelName}
                                            hotelId={hotel.hotelId}
                                            rating={hotel.stars}
