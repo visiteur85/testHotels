@@ -36,6 +36,7 @@ export const FindHotelForm = () => {
 
     };
 
+
     useEffect(()=>{
         dispatch(getHotels(filteredHotels))
     },[])

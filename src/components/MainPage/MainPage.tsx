@@ -8,10 +8,16 @@ import {FindHotelForm} from "./FindHotel/FindHotelForm";
 import {useAppSelector} from "../../store/store";
 import {Hotels} from "./hotels/Hotels";
 import {FavoritesHotels} from "./FavoritesHotel/FavoritsHotels";
+import {LinearProgress} from "@mui/material";
+import {appStatus} from "../../store/selectors";
 
 
 export const MainPage = () => {
     const hotels = useAppSelector(state => state.getHotels.hotels)
+    const isLoading = useAppSelector(appStatus).isLoading
+
+    console.log(isLoading)
+
     const login = getLoginFromStorage()
 
     if (!login) {
@@ -23,6 +29,7 @@ export const MainPage = () => {
             <div className={style.footer}>
                 <Header/>
             </div>
+            {isLoading && <LinearProgress/>}
             <div className={style.subMainPage}>
                 <div className={style.findAndFavorites}>
                     <div className={style.findHotel}>
