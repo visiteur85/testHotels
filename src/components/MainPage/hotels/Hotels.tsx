@@ -10,7 +10,6 @@ import {HotelCard} from "../../hotelCard/HotelCard";
 import houseIcon from "../../../assets/pictures/house.png";
 
 
-
 export const Hotels = () => {
         const foundHotels = useAppSelector(selectHotels);
         const allHotels = useAppSelector(allHotelsfromServer)
@@ -21,7 +20,7 @@ export const Hotels = () => {
         const startDate = dayjs(foundHotels.date);
         const endDate = dayjs(foundHotels.endDate);
 
-        const diff = endDate.diff(startDate, 'day')  ;
+        const diff = endDate.diff(startDate, 'day');
 
 
         const formattedDate = dayjs(foundHotels.date).locale('ru').format('DD MMMM YYYY');
@@ -45,18 +44,17 @@ export const Hotels = () => {
                 <div className={style.allHotelsBlock}>
                     {allHotels.map((m) => {
                         return (
-                            <div className={style.hotelInfo} key={m.hotelId}>
+                            <div className={style.hotelInfo} key={m.hotelId + '' + m.priceAvg}>
                                 <div className={style.house}>
                                     <img src={houseIcon} alt=""/>
                                 </div>
-                                <HotelCard name={m.hotelName}  hotelId={m.hotelId}
+                                <HotelCard name={m.hotelName} hotelId={m.hotelId}
                                            rating={m.stars}
                                            price={m.priceAvg}
                                            favorite={m.isFavorite}
                                            formattedDate={formattedDate}
                                            diffDate={diff}
-                                           // ob={ {hotelName: m.hotelName}}
-
+                                    // ob={ {hotelName: m.hotelName}}
 
 
                                 />

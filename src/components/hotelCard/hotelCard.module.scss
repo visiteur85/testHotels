@@ -12,14 +12,14 @@
   .hotelInfo {
     display: flex;
     width: 100%;
-    overflow: hidden;
+    //overflow: hidden;
 
     .nameHotel {
       font-weight: 300;
       font-size: 17px;
       line-height: 22px;
       color: $black;
-      overflow: hidden;
+      //overflow: hidden;
 
 
     }
@@ -58,11 +58,19 @@
           display: flex;
           align-items: center;
           gap: 3px;
-          margin-right: 271px;
+
 
           .fill * {
             fill: $Yellow;
           }
+        }
+
+        .check {
+          margin-right: 87px;
+        }
+
+        .ddd {
+          margin-right: 271px;
         }
 
         p {
@@ -96,8 +104,6 @@
   }
 
 }
-
-
 
 
 
