@@ -50,7 +50,7 @@ export const AuthInput = ({
             <span className={`${!error ? s.inputName : s.inputNameError}`}>{inputName}</span>
             <div className={s.inputStyle}>
                 <input className={`${!error ? s.input : s.inputError}`} type={name} {...validation}
-                       defaultValue={defaultValue} placeholder={ placeholder}/>
+                       defaultValue={defaultValue} placeholder={ placeholder} min={new Date().toISOString().split('T')[0]}/>
                 <div className={s.errorStyle}>
                     {error && (
                         <span className={s.error}>{error.message || 'Error'}</span>
